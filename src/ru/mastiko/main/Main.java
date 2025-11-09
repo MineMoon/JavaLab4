@@ -102,7 +102,7 @@ public class Main {
                     System.out.println("Последние 3: " + intList.subList(97, 100));
 
                     List<Double> doubleList = new ArrayList<>();
-                    Mfiller.oneHungredFiller(doubleList, i -> i * (double) i);
+                    Mfiller.oneHungredFiller(doubleList, i ->(double) i);
                     System.out.println("\nТест 2 - дробные числа: " + doubleList.size() + " элементов");
                     System.out.println("Первые 3: " + doubleList.subList(0, 3));
                     System.out.println("Последние 3: " + doubleList.subList(97, 100));
@@ -222,13 +222,11 @@ public class Main {
                     listOfLists.add(l3);
 
                     // Сначала преобразуем каждый список в его длину
-                    List<Integer> sizes = new ArrayList<>();
-                    for (List<Integer> list : listOfLists) {
-                        sizes.add(list.size());
-                    }
+
+                    List<Integer> sizes = Mconverter.function(listOfLists, s -> s.size());
 
                     // Затем суммируем все длины
-                    Integer totalElements = Contraction.contraction(sizes, (a, b) -> a + b);
+                    Integer totalElements = Contraction.contraction(sizes, (a, b) -> a);
 
                     System.out.println("Списки: " + listOfLists);
                     System.out.println("Размеры каждого списка: " + sizes);
