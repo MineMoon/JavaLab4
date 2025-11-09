@@ -102,6 +102,8 @@ return Integer.compare(this.floor, other.floor);
 - **Валидация в конструкторе** - этажи должны быть в диапазоне 0-164
 - **Автоматическое определение окончания** для слова "этаж"
 
+![Image](https://github.com/MineMoon/JavaLab4/blob/main/PNGFR/House1.png)
+
 ## Пакет datastructures
 
 ### Класс ImmutableListofValues
@@ -121,6 +123,9 @@ public class ImmutableListofValues<T> {
 - **Безопасность** - методы `get()` и `set()` возвращают копию объекта
 - **Неизменяемость** - при изменении возвращается новый объект
 - **Копирование** - конструктор копирования создает глубокую копию массива
+
+![Image](https://github.com/MineMoon/JavaLab4/blob/main/PNGFR/Arrays1.png)
+![Image](https://github.com/MineMoon/JavaLab4/blob/main/PNGFR/Arrays2.png)
 
 ## Пакет mfiller
 
@@ -161,6 +166,7 @@ Mfiller.oneHungredFiller(DoubleList, i -> (double) i);
 Mfiller.oneHungredFiller(intList, i -> i * 2);
 ```
 
+![Image](https://github.com/MineMoon/JavaLab4/blob/main/PNGFR/Mfiller1.png)
 
 ## Пакет pairfiller
 
@@ -190,6 +196,8 @@ Mfiller.oneHungredFiller(intList, i -> i * 2);
 - **Два преобразователя** - отдельные функции для каждого элемента пары
 - **Создание пар** - каждая пара создается из одного исходного числа
 - **Проверка на null в функциональных ссылках**
+
+![Image](https://github.com/MineMoon/JavaLab4/blob/main/PNGFR/pairFiller1.png)
 
 ## Пакет mconverter
 
@@ -229,6 +237,8 @@ public static <T,P> List<P> function(List<T> list, Function<T, P> func)  {
 });
 ```
 Тут уже в ламбла функции можем написать логику вычисления максимума.
+
+![Image](https://github.com/MineMoon/JavaLab4/blob/main/PNGFR/Mconverter1.png)
 
 ## Пакет mfilter
 
@@ -271,6 +281,8 @@ Predicate — функциональный интерфейс для прове�
     return true;
 });
 ```
+![Image](https://github.com/MineMoon/JavaLab4/blob/main/PNGFR/Mfilter2.png)
+![Image](https://github.com/MineMoon/JavaLab4/blob/main/PNGFR/Mfilter1.png)
 
 ## Пакет contraction
 
@@ -305,6 +317,8 @@ String concatenated = Contraction.contraction(strings, (s1, s2) -> s1 + s2);
 ```java
  Integer sum = Contraction.contraction(numbers, (a, b) -> a + b);
 ```
+
+![Image](https://github.com/MineMoon/JavaLab4/blob/main/PNGFR/Contraction.png)
 
 #### Особенности:
 - **Исключение для пустого списка** - гарантирует осмысленный результат
@@ -380,6 +394,8 @@ List<String> uniqueStrings = MCollector.collect(stringsForSet, ArrayList::new,
         }
 );
 ```
+
+![Image](https://github.com/MineMoon/JavaLab4/blob/main/PNGFR/MCollector.png)
 
 ## Пакет Mpair
 
