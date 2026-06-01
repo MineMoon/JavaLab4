@@ -1,39 +1,129 @@
+//FIXME:отсутствие авторских прав
+//
+//FIXTO:
+// @copyright MineMoon. All rights reserved.
+
 package ru.mastiko.Mpair;
 
-import java.util.Objects;
+// FIXME: Отсутствует Javadoc для класса и публичных методов,
+// отступы составляют 4 пробела вместо 2,
+// отсутствует конструктор по умолчанию и конструктор копирования,
+// отсутствует проверка на null в методах,
+// public class Pair {
+//     private Object first;
+//     private Object second;
+//
+//     public Object getFirst() {
+//         return first;
+//     }
+//
+//     public void setFirst(Object first) {
+//         this.first = first;
+//     }
+//
+//     public Object getSecond() {
+//         return second;
+//     }
+//
+//     public void setSecond(Object second) {
+//         this.second = second;
+//     }
+//
+//     public Pair(Object first, Object second) {
+//         this.first = first;
+//         this.second = second;
+//     }
+//
+//     @Override
+//     public String toString() {
+//         return "(" + first + ";" + second + ")";
+//     }
+// }
 
-public class Pair<T, U> {
-    private final T first;
-    private final U second;
+// FIXTO:
 
-    public Pair(T first, U second) {
-        this.first = first;
-        this.second = second;
+/**
+ * A utility class that holds a pair of two objects.
+ */
+public class Pair {
+
+  private Object first;
+  private Object second;
+
+  /**
+   * Default constructor initializing fields to null.
+   */
+  public Pair() {
+    this.first = null;
+    this.second = null;
+  }
+
+  /**
+   * Constructs a pair with specified objects.
+   *
+   * @param first  the first object of the pair.
+   * @param second the second object of the pair.
+   */
+  public Pair(Object first, Object second) {
+    this.first = first;
+    this.second = second;
+  }
+
+  /**
+   * Copy constructor.
+   *
+   * @param other the pair object to copy.
+   */
+  public Pair(Pair other) {
+    if (other != null) {
+      this.first = other.getFirst();
+      this.second = other.getSecond();
     }
+  }
 
-    public T getFirst() {
-        return first;
-    }
+  /**
+   * Returns the first element of the pair.
+   *
+   * @return the first object.
+   */
+  public Object getFirst() {
+    return first;
+  }
 
-    public U getSecond() {
-        return second;
-    }
+  /**
+   * Sets the first element of the pair.
+   *
+   * @param first the object to set.
+   */
+  public void setFirst(Object first) {
+    this.first = first;
+  }
 
-    @Override
-    public String toString() {
-        return "Pair{" + first + ", " + second + '}';
-    }
+  /**
+   * Returns the second element of the pair.
+   *
+   * @return the second object.
+   */
+  public Object getSecond() {
+    return second;
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pair<?, ?> pair = (Pair<?, ?>) o;
-        return Objects.equals(first, pair.first) && Objects.equals(second, pair.second);
-    }
+  /**
+   * Sets the second element of the pair.
+   *
+   * @param second the object to set.
+   */
+  public void setSecond(Object second) {
+    this.second = second;
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(first, second);
-    }
+  /**
+   * Returns a string representation of the pair.
+   *
+   * @return formatted string as (first; second).
+   */
+  @Override
+  public String toString() {
+    return String.format("(%s; %s)", first, second);
+  }
 }
